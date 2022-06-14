@@ -1,0 +1,111 @@
+﻿<Window x:Name="mainWindow" x:Class="LibraryManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:designHome="clr-namespace:LibraryManager.HomePage"
+        xmlns:local="clr-namespace:LibraryManager" xmlns:register="clr-namespace:LibraryManager.Register"
+        xmlns:bookAdd="clr-namespace:LibraryManager.AddToLibrary" xmlns:display="clr-namespace:LibraryManager.Display" xmlns:report="clr-namespace:LibraryManager.Report" xmlns:rent="clr-namespace:LibraryManager.Rent" xmlns:returnitems="clr-namespace:LibraryManager.ReturnItems" xmlns:updatestock="clr-namespace:LibraryManager.UpdateStock" xmlns:saleupdate="clr-namespace:LibraryManager.SaleUpdate" xmlns:logout="clr-namespace:LibraryManager.Logout"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Register}">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TabControl Background="White" Grid.RowSpan="2" FontSize="20">
+            <TabItem Background="White">
+                <TabItem.Header>
+                    <Image Width="50" Source="C:\Users\inbal\source\repos\LibraryManager\LibraryManager\Images\HomePage.png"></Image>
+                </TabItem.Header>
+                <designHome:HomePageUserControl></designHome:HomePageUserControl>
+            </TabItem>
+            <TabItem Background="White" Width="80">
+                <TabItem.Header>
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Text="Register" FontWeight="Bold" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                        <Image Name="Register" HorizontalAlignment="Center" Width="50" Source="C:\Users\inbal\source\repos\LibraryManager\LibraryManager\Images\Register.png"></Image>
+                    </WrapPanel>
+                </TabItem.Header>
+                <register:SignTextUserControl></register:SignTextUserControl>
+            </TabItem>
+            <TabItem Background="White" Width="80" Visibility="{Binding ManagerVisibility}">
+                <TabItem.Header>
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Text="Add Item" FontWeight="Bold" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                        <Image Width="50" Source="C:\Users\inbal\source\repos\LibraryManager\LibraryManager\Images\AddBook.png"></Image>
+                    </WrapPanel>
+                </TabItem.Header>
+                <bookAdd:TextsUserControl></bookAdd:TextsUserControl>
+            </TabItem>
+            <TabItem Background="White" Width="80" Visibility="{Binding WorkerAndManagerVisibility}">
+                <TabItem.Header>
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Text="Display" FontWeight="Bold" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                        <Image Width="50" Source="C:\Users\inbal\source\repos\LibraryManager\LibraryManager\Images\Display.png"></Image>
+                    </WrapPanel>
+                </TabItem.Header>
+                <display:DisplayTextUserControl></display:DisplayTextUserControl>
+            </TabItem>
+            <TabItem Background="White" Width="80" Visibility="{Binding WorkerAndManagerVisibility}">
+                <TabItem.Header>
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Text="Update" FontWeight="Bold" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                        <Image Width="50" Source="C:\Users\inbal\source\repos\LibraryManager\LibraryManager\Images\updates.png"></Image>
+                    </WrapPanel>
+                </TabItem.Header>
+                <updatestock:UpdateStockUserControl></updatestock:UpdateStockUserControl>
+            </TabItem>
+            <TabItem Background="White" Width="80" Visibility="{Binding CustomerVisibility}">
+                <TabItem.Header>
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Text="Rent" FontWeight="Bold" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                        <Image Width="50" Source="C:\Users\inbal\source\repos\LibraryManager\LibraryManager\Resources\renting.png"></Image>
+                    </WrapPanel>
+                </TabItem.Header>
+                <rent:RentTextUserControl></rent:RentTextUserControl>
+            </TabItem>
+            <TabItem Background="White" Width="80" Visibility="{Binding ManagerVisibility}">
+                <TabItem.Header>
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Text="Report" FontWeight="Bold" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                        <Image Width="50" Source="C:\Users\inbal\source\repos\LibraryManager\LibraryManager\Images\Report.jpg"></Image>
+                    </WrapPanel>
+                </TabItem.Header>
+                <report:ReportTextUserControl></report:ReportTextUserControl>
+            </TabItem>
+            <TabItem Background="White" Width="80" Visibility="{Binding CustomerVisibility}">
+                <TabItem.Header>
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Text="Return" FontWeight="Bold" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                        <Image Width="50" Source="C:\Users\inbal\source\repos\LibraryManager\LibraryManager\Images\Return.png"></Image>
+                    </WrapPanel>
+                </TabItem.Header>
+                <returnitems:ReturnTextUserControl></returnitems:ReturnTextUserControl>
+            </TabItem>
+            <TabItem Background="White" Width="80" Visibility="{Binding ManagerVisibility}">
+                <TabItem.Header>
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Text="Discount" FontWeight="Bold" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                        <Image  Width="50" Source="C:\Users\inbal\source\repos\LibraryManager\LibraryManager\Images\sale.png"></Image>
+                    </WrapPanel>
+                </TabItem.Header>
+                <saleupdate:SaleTextUserControl></saleupdate:SaleTextUserControl>
+            </TabItem>
+            <TabItem Background="White" Width="80">
+                <TabItem.Header>
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Text="Logout" FontWeight="Bold" FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                        <Image  Width="50" Source="C:\Users\inbal\source\repos\LibraryManager\LibraryManager\Images\logout.jpg"></Image>
+                    </WrapPanel>
+                </TabItem.Header>
+                <logout:LogoutTextUserControl></logout:LogoutTextUserControl>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

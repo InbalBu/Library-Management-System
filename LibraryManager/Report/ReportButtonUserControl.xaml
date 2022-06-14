@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="LibraryManager.Report.ReportButtonUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LibraryManager.Report"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+              DataContext="{Binding Source={StaticResource Locator}, Path=Buttons}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="Filter" Content="Filter By Name" HorizontalAlignment="Center" Background="White" FontStyle="Italic" FontSize="13" FontWeight="Bold" Height="40" Width="110" Command="{Binding FilterReportName}"></Button>
+        <Button x:Name="ff" Content="Reload" Grid.Row="1" HorizontalAlignment="Center" Background="White" FontStyle="Italic" FontSize="13" FontWeight="Bold" Height="40" Width="110" Command="{Binding Reload}"></Button>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="LibraryManager.HomePage.HomePageUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LibraryManager.HomePage"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+              DataContext="{Binding Source={StaticResource Locator}, Path=Text}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--<TextBlock Text="Welcome to my Library!" FontSize="80" FontWeight="DemiBold" Foreground="Black" FontStyle="Italic" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="Enjoy" Grid.Row="1" FontSize="80" FontWeight="DemiBold" Foreground="Black" FontStyle="Italic" VerticalAlignment="Center" HorizontalAlignment="Center"/>-->
+
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="C:\Users\inbal\source\repos\LibraryManager\LibraryManager\Images\Welcome.png"/>
+        </Grid.Background>
+        
+    </Grid>
+</UserControl>

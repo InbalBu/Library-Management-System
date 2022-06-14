@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB7CC9AB-34CD-4E5D-B8DB-80735D0A3F87}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LibraryManager</RootNamespace>
+    <AssemblyName>LibraryManager</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridExtensions, Version=2.5.13.0, Culture=neutral, PublicKeyToken=43de855f87de903a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataGridExtensions.2.5.13\lib\net452\DataGridExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AddBookToLibrary\BookButtonsUserControl.xaml.cs">
+      <DependentUpon>BookButtonsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddBookToLibrary\BookTextUserControl.xaml.cs">
+      <DependentUpon>BookTextUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddJournalToLibrary\JournalButtonsUserControl.xaml.cs">
+      <DependentUpon>JournalButtonsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddJournalToLibrary\JournalTextUserControl.xaml.cs">
+      <DependentUpon>JournalTextUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddToLibrary\ButtonsUserControl.xaml.cs">
+      <DependentUpon>ButtonsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddToLibrary\MainTextUserControl.xaml.cs">
+      <DependentUpon>MainTextUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddToLibrary\TextsUserControl.xaml.cs">
+      <DependentUpon>TextsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRegister\CustomerRegisterUserControl.xaml.cs">
+      <DependentUpon>CustomerRegisterUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRegister\CustomerTextUserControl.xaml.cs">
+      <DependentUpon>CustomerTextUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Display\DisplayButtonUserControl.xaml.cs">
+      <DependentUpon>DisplayButtonUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Display\DisplayListViewUserControl.xaml.cs">
+      <DependentUpon>DisplayListViewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Display\DisplayTextUserControl.xaml.cs">
+      <DependentUpon>DisplayTextUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage\HomePageUserControl.xaml.cs">
+      <DependentUpon>HomePageUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logout\CustomerLogOut.xaml.cs">
+      <DependentUpon>CustomerLogOut.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logout\EmployeeLogOut.xaml.cs">
+      <DependentUpon>EmployeeLogOut.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logout\LogoutButtonUserControl.xaml.cs">
+      <DependentUpon>LogoutButtonUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logout\LogOutCustomerButton.xaml.cs">
+      <DependentUpon>LogOutCustomerButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logout\LogoutTextUserControl.xaml.cs">
+      <DependentUpon>LogoutTextUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Notifier.cs" />
+    <Compile Include="Register\MainSignUpUserControl.xaml.cs">
+      <DependentUpon>MainSignUpUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Register\ManagerSignUpUserControl.xaml.cs">
+      <DependentUpon>ManagerSignUpUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Register\SignButtonUserControl.xaml.cs">
+      <DependentUpon>SignButtonUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Register\SignManagerUserControl.xaml.cs">
+      <DependentUpon>SignManagerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Register\SignTextUserControl.xaml.cs">
+      <DependentUpon>SignTextUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Rent\RentButtonUserControl.xaml.cs">
+      <DependentUpon>RentButtonUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Rent\RentTextUserControl.xaml.cs">
+      <DependentUpon>RentTextUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportButtonUserControl.xaml.cs">
+      <DependentUpon>ReportButtonUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportTextUserControl.xaml.cs">
+      <DependentUpon>ReportTextUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnItems\ReturnButtonUserControl.xaml.cs">
+      <DependentUpon>ReturnButtonUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnItems\ReturnTextUserControl.xaml.cs">
+      <DependentUpon>ReturnTextUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SaleUpdate\SaleButtonUserControl.xaml.cs">
+      <DependentUpon>SaleButtonUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SaleUpdate\SaleTextUserControl.xaml.cs">
+      <DependentUpon>SaleTextUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStock\ButtonUpdateUserControl.xaml.cs">
+      <DependentUpon>ButtonUpdateUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStock\UpdateStockUserControl.xaml.cs">
+      <DependentUpon>UpdateStockUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ButtonViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\RegisterViewModel.cs" />
+    <Compile Include="ViewModel\RentViewModel.cs" />
+    <Compile Include="ViewModel\ReportViewModel.cs" />
+    <Compile Include="ViewModel\TextViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Page Include="AddBookToLibrary\BookButtonsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddBookToLibrary\BookTextUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddJournalToLibrary\JournalButtonsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddJournalToLibrary\JournalTextUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddToLibrary\ButtonsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddToLibrary\MainTextUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddToLibrary\TextsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerRegister\CustomerRegisterUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomerRegister\CustomerTextUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Display\DisplayButtonUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Display\DisplayListViewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Display\DisplayTextUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomePage\HomePageUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Logout\CustomerLogOut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Logout\EmployeeLogOut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Logout\LogoutButtonUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Logout\LogOutCustomerButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Logout\LogoutTextUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Register\MainSignUpUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Register\ManagerSignUpUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Register\SignButtonUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Register\SignManagerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Register\SignTextUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Rent\RentButtonUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Rent\RentTextUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Report\ReportButtonUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Report\ReportTextUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReturnItems\ReturnButtonUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReturnItems\ReturnTextUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SaleUpdate\SaleButtonUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SaleUpdate\SaleTextUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateStock\ButtonUpdateUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateStock\UpdateStockUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookLib\BookLib.csproj">
+      <Project>{CA80B8FE-284E-418E-A45A-828B55C889B5}</Project>
+      <Name>BookLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{656EBAA2-7C96-4FEA-BC46-BFBAC4CD9A2B}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{971B18F1-0E1B-415F-BAB1-3E6F6091CC80}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\library1.jpg" />
+    <Resource Include="Images\library2.jpg" />
+    <Resource Include="Images\library3.jpg" />
+    <Resource Include="Images\library4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\library5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\libraryNew.jpg" />
+    <Resource Include="Images\librarynew2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\HomePage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AddBook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Display.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddBook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomePage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\renting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\renting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Welcome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Welcome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\updateStock.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\updateAmoung.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Display.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\updates.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\sale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updates.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logout.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\screenshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\libraryilustration.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\librarytryback.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\libraryilustration.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

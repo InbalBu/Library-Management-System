@@ -1,0 +1,15 @@
+{
+  "BookName": "fd",
+  "Edition": null,
+  "Author": null,
+  "CopyNumber": 0,
+  "Category": 0,
+  "ISBN": 0,
+  "Name": "fd",
+  "Price": 0.0,
+  "Discount": 0.0,
+  "ItemStock": 0,
+  "PrintDate": "2022-05-17T21:19:35.3526437+03:00",
+  "RentedDate": "2022-05-17T21:19:35.3526437+03:00",
+  "CustomerRef": null
+}

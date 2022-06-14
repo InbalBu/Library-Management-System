@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="LibraryManager.SaleUpdate.SaleTextUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LibraryManager.SaleUpdate"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding Source={StaticResource Locator}, Path=Text}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="categoryName" Text="Enter Book Category: "  VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" Grid.Column="0"/>
+        <TextBlock x:Name="categoryJournalName" Text="Enter Journal Category: "  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" FontWeight="Bold" />
+        <TextBlock Text="Enter New Book Discount: "  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="0" FontWeight="Bold" />
+        <TextBlock Text="Enter New Journal Discount: "  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1" FontWeight="Bold" />
+        
+        <TextBox x:Name="categoryBook" Grid.Column="1" Grid.Row="0" Height="40" HorizontalAlignment="Left" Width="130" Text="{Binding Category, Mode=TwoWay}"/>
+        <TextBox x:Name="categoryJournal" Grid.Column="1" Grid.Row="1" Height="40" HorizontalAlignment="Left" Width="130" Text="{Binding JournalCategory, Mode=TwoWay}"/>
+
+        <TextBox x:Name="categoryBookDiscount" Grid.Column="4" Grid.Row="0" Height="40" HorizontalAlignment="Left" Width="130" Text="{Binding Discount, Mode=TwoWay}" TextChanged="categoryBookDiscount_TextChanged"/>
+        <TextBox x:Name="categoryJournalDiscount" Grid.Column="4" Grid.Row="1" Height="40" HorizontalAlignment="Left" Width="130" Text="{Binding Discount, Mode=TwoWay}" TextChanged="categoryJournalDiscount_TextChanged"/>
+
+        <local:SaleButtonUserControl Grid.Row="4" Grid.ColumnSpan="4"></local:SaleButtonUserControl>
+
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="C:\Users\inbal\source\repos\LibraryManager\LibraryManager\Images\libraryilustration.jpg"/>
+        </Grid.Background>
+
+    </Grid>
+</UserControl>
